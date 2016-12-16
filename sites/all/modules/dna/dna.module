@@ -32,13 +32,15 @@ function element_validate_input($element) {
 function dna_find_matches($user_nucleotides) {
     //create array of characters for UN
 
-    //create empty array for results
+    //create empty variable for results
 
     //for each nucleotide in array
 
-    //conditinal statement identifies nucleotide and matches it to its neccesary pair, then pushes paired nucleotide into results array
+    //conditinal statement identifies nucleotide and matches it to its neccesary pair, then pushes paired nucleotide into results string
 
     //create session variable key for results.
+
+    //remember to add return statement of results string for test
 
 }
 

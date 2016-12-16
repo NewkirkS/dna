@@ -1,9 +1,23 @@
 <?php
 
-class DnaTestCase extends DrupalUnitTestCase
+class dnaTestCase extends DrupalUnitTestCase
 {
+    public static function getInfo() {
+        return array(
+            'name' => 'DNA Module Tests',
+            'description' => 'Unit test for DNA matching',
+            'group' => 'DNA Module',
+        );
+    }
+
     function testFindMatches()
     {
-        
+        $description = 'Output should be "TAGC"';
+        //Arrange
+        $input = 'atcg';
+        //Act
+        $result = dna_find_matches($input);
+        //Assert
+        $this->assertEqual($result, 'TAGC', $description);
     }
 }
