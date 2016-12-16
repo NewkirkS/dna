@@ -25,10 +25,23 @@ function dna_form_submit() {
 
 }
 
-function assemble_dna() {
+function element_validate_input($element) {
+
+}
+
+function assemble_dna($user_nucleotides) {
+    //create array of characters for UN
+
+    //create empty array for results
+
+    //for each nucleotide in array
+
+    //conditinal statement identifies nucleotide and matches it to its neccesary pair, then pushes paired nucleotide into results array
+
+    //create session variable key for results.
 
 }
 
 function dna_display_result() {
-    
+
 }
