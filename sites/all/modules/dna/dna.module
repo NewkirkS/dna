@@ -1,0 +1,34 @@
+<?php
+
+function dna_menu() {
+    $items['dna_entry'] = array(
+        'title' => 'Generate DNA Strand',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('dna_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['dna_result'] = array(
+        'title' => 'DNA Result',
+        'page callback' => 'dna_display_result',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function dna_form() {
+
+}
+
+function dna_form_submit() {
+
+}
+
+function assemble_dna() {
+
+}
+
+function dna_display_result() {
+    
+}
