@@ -29,7 +29,7 @@ function element_validate_input($element) {
 
 }
 
-function assemble_dna($user_nucleotides) {
+function dna_find_matches($user_nucleotides) {
     //create array of characters for UN
 
     //create empty array for results
