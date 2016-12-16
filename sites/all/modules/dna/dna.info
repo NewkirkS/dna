@@ -1,0 +1,7 @@
+name = DNA
+description = Matches user input of half a dna double helix to complete a dna strand.
+package = My Modules
+core = 7.x
+files[] = dna.module
+files[] = dna.test
+dependencies[] = simpletest
