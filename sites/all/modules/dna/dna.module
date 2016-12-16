@@ -32,13 +32,19 @@ function dna_form() {
     return $form;
 }
 
+
+function element_validate_input($element) {
+    $input = $element['#value'];
+    $regex = '/([BD-FH-SU-Zbd-fh-su-z])/';
+    if(ctype_alpha($input) === false || preg_match($regex, $input) === 1) {
+        form_error($element, t('Please enter an allowed series of values (A, T, C or G).'));
+    }
+}
+
 function dna_form_submit() {
 
 }
 
-function element_validate_input($element) {
-
-}
 
 function dna_find_matches($user_nucleotides) {
     //create array of characters for UN
