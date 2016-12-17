@@ -21,7 +21,7 @@ function dna_form() {
     $form['user_input'] = array(
         '#title' => 'Nucleotides',
         '#type' => 'textfield',
-        '#description' => t('Enter any combination of the Nucleotides A, T, C or G with no spaces.'),
+        '#description' => t('Enter any combination of the nucleotides A, T, C or G with no spaces.'),
         '#element_validate' => array('element_validate_input'),
         '#required' => TRUE,
     );
@@ -48,20 +48,30 @@ function dna_form_submit($form, &$form_state) {
 
 
 function dna_find_matches($user_nucleotides) {
-    //create array of characters for UN
-
+    //create array of characters for user input
+    $user_input = $_SESSION['user_input'];
+    $input_characters = str_split($user_input);
     //create empty variable for results
-
+    $result = '';
     //for each nucleotide in array
-
-    //conditinal statement identifies nucleotide and matches it to its neccesary pair, then pushes paired nucleotide into results string
-
+    foreach ($input_characters as $character) {
+        //conditinal statement identifies nucleotide and matches it to its neccesary pair, then pushes paired nucleotide into results string
+        if ($character === 'A') {
+            $result .= 'T';
+        } elseif ($character === 'T') {
+            $result .= 'A';
+        } elseif ($character === 'C') {
+            $result .= 'G';
+        } elseif ($character === 'G') {
+            $result .= 'C';
+        }
+    }
     //create session variable key for results.
-
+    $_SESSION['result'] = $result;
     //remember to add return statement of results string for test
-
+    return $result;
 }
 
 function dna_display_result() {
-
+    
 }
