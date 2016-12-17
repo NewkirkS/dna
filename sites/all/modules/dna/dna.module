@@ -44,6 +44,8 @@ function element_validate_input($element) {
 function dna_form_submit($form, &$form_state) {
     $input = strtoupper($form_state['values']['user_input']);
     $_SESSION['user_input'] = $input;
+    dna_find_matches($input);
+    $form_state['redirect'] = 'dna_result';
 }
 
 
@@ -73,5 +75,11 @@ function dna_find_matches($user_nucleotides) {
 }
 
 function dna_display_result() {
-    
+    return '
+    <h4>Your sequence of nucleotides:</h4>
+    <h3>' . $_SESSION['user_input'] . '</h3>
+    <br>
+    <h4>The matching nucleotides (in order):</h4>
+    <h3>' . $_SESSION['result'] . '</h3>
+    ';
 }
