@@ -1,0 +1,24 @@
+<?php
+/**
+* @file
+* Functional test for DNA module.
+*/
+class DnaInterfaceTest extends DrupalWebTestCase {
+
+    public static function getInfo() {
+        return array(
+            'name' => 'DNA Functional Test',
+            'description' => 'Tests if output is correctly displaying in results page',
+            'group' => 'DNA Module'
+        );
+    }
+
+    public function setUp() {
+        parent::setUp(array('dna'));
+    }
+
+    public function testDnaForm() {
+        $this->drupalGet('http://localhost:8888/dna_result');
+        $this->assertText('The matching nucleotides (in order):', t('Form submission was successful.'));
+    }
+}
